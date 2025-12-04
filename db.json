@@ -1,42 +1,49 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "json-server",
-            "author": "typicode"
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "body": "some comment",
-            "postId": 1
-        }
-    ],
-    "contacts": [
-        {
-            "id": "1",
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "j@j.com",
-            "phone": "123123123"
-        },
-        {
-            "id": "2",
-            "firstName": "Tim",
-            "lastName": "Cole",
-            "email": "t@t.com",
-            "phone": "321321321"
-        },
-        {
-            "id": "3",
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "j@j.com",
-            "phone": "987654321"
-        }
-    ],
-    "profile": {
-        "name": "typicode"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "j@j.com",
+      "phone": "123123123"
+    },
+    {
+      "id": "2",
+      "firstName": "Tim",
+      "lastName": "Cole",
+      "email": "t@t.com",
+      "phone": "321321321"
+    },
+    {
+      "id": "3",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "j@j.com",
+      "phone": "987654321"
+    },
+    {
+      "id": "f46b",
+      "firstName": "Борис",
+      "lastName": "Зюков",
+      "email": "ziukoff1985@gmail.com",
+      "phone": "0952746240"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
