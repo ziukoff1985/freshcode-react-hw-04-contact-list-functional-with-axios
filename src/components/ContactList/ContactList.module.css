@@ -1,0 +1,32 @@
+.contactListWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+    width: 45%;
+    padding: 20px;
+    border: 3px solid #505050;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.contactList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.addButton {
+    margin-top: auto;
+    align-self: center;
+    padding: 10px 20px;
+    border: 2px solid #505050;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e1e1e1;
+    transition: all 0.2s ease-in-out;
+}
+
+.addButton:hover {
+    background-color: #b8b8b8;
+}

@@ -1,0 +1,65 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45%;
+    min-height: 70vh;
+    padding: 20px;
+    border: 3px solid #505050;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.inputWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid #505050;
+}
+
+.input {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.input:focus,
+.input:active {
+    background-color: #e3e3e3;
+    outline: none;
+}
+
+.buttonWrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.deleteButton {
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+    transform: scale(1.2);
+}
+
+.formButton {
+    padding: 10px 20px;
+    border: 2px solid #505050;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e1e1e1;
+    transition: all 0.2s ease-in-out;
+}
+
+.formButton:hover {
+    background-color: #b8b8b8;
+}

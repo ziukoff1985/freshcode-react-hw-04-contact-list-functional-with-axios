@@ -1,0 +1,30 @@
+.contactItem {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 2px solid #505050;
+    padding-left: 10px;
+    background-color: #e1e1e1;
+}
+
+.contactName {
+    display: flex;
+    align-items: center;
+}
+
+.deleteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+    transform: scale(1.2);
+}
+
+.updating {
+    outline: 4px solid #ef6464;
+    outline-offset: 2px;
+}
