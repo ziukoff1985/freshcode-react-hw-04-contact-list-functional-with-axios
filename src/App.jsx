@@ -11,13 +11,15 @@ function App() {
     const [contactForEdit, setContactForEdit] = useState(createEmptyContact);
 
     useEffect(() => {
-        api.get('/').then(({ data }) => {
-            if (!data) {
-                setContacts([]);
-            } else {
-                setContacts(data);
-            }
-        });
+        api.get('/')
+            .then(({ data }) => {
+                if (!data) {
+                    setContacts([]);
+                } else {
+                    setContacts(data);
+                }
+            })
+            .catch((err) => console.log(err.message));
     }, []);
 
     // useEffect(getDataFromLocalStorage, []);
