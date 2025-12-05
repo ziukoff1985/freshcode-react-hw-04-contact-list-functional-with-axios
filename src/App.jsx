@@ -52,6 +52,18 @@ function App() {
             .catch((err) => console.log(err.message));
     }
 
+    // async function createContact(contact) {
+    //     try {
+    //         const { data } = await api.post('/', contact);
+    //         console.log(data);
+    //         const newContacts = [...contacts, data];
+    //         setContacts(newContacts);
+    //         setContactForEdit(createEmptyContact);
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    // }
+
     // function createContact(contact) {
     //     contact.id = nanoid();
     //     const newContacts = [...contacts, contact];
@@ -61,17 +73,31 @@ function App() {
     // }
 
     // ----------- updateContact -----------
-    function updateContact(contact) {
-        api.put(`/${contact.id}`, contact)
-            .then(({ data }) => {
-                console.log(data);
-                const newContacts = contacts.map((item) =>
-                    item.id === contact.id ? data : item
-                );
-                setContacts(newContacts);
-                setContactForEdit({ ...contact });
-            })
-            .catch((err) => console.log(err.message));
+    // function updateContact(contact) {
+    //     api.put(`/${contact.id}`, contact)
+    //         .then(({ data }) => {
+    //             console.log(data);
+    //             const newContacts = contacts.map((item) =>
+    //                 item.id === contact.id ? data : item
+    //             );
+    //             setContacts(newContacts);
+    //             setContactForEdit({ ...contact });
+    //         })
+    //         .catch((err) => console.log(err.message));
+    // }
+
+    async function updateContact(contact) {
+        try {
+            const { data } = await api.put(`/${contact.id}`, contact);
+            console.log(data);
+            const newContacts = contacts.map((item) =>
+                item.id === contact.id ? data : item
+            );
+            setContacts(newContacts);
+            setContactForEdit({ ...contact });
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     // function updateContact(contact) {
@@ -86,16 +112,18 @@ function App() {
     // ------------ deleteContact ------------
     function deleteContact(contactId) {
         api.delete(`/${contactId}`)
-            .then(({ data }) => console.log(data))
+            .then(({ data }) => {
+                console.log(data);
+                const newContacts = contacts.filter(
+                    (contact) => contact.id !== contactId
+                );
+                const isContactNowUpdating = contactForEdit.id === contactId;
+                setContacts(newContacts);
+                setContactForEdit(
+                    isContactNowUpdating ? createEmptyContact() : contactForEdit
+                );
+            })
             .catch((err) => console.log(err.message));
-        const newContacts = contacts.filter(
-            (contact) => contact.id !== contactId
-        );
-        const isContactNowUpdating = contactForEdit.id === contactId;
-        setContacts(newContacts);
-        setContactForEdit(
-            isContactNowUpdating ? createEmptyContact() : contactForEdit
-        );
     }
 
     // async function deleteContact(contactId) {
@@ -142,9 +170,9 @@ function App() {
         setContactForEdit({ ...contact });
     }
 
-    const saveToLocalStorage = (contacts) => {
-        localStorage.setItem('contacts', JSON.stringify(contacts));
-    };
+    // const saveToLocalStorage = (contacts) => {
+    //     localStorage.setItem('contacts', JSON.stringify(contacts));
+    // };
 
     return (
         <>
