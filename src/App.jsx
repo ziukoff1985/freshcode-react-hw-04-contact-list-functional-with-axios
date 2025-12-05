@@ -75,32 +75,32 @@ function App() {
     // }
 
     // ----------- updateContact -----------
-    // function updateContact(contact) {
-    //     api.put(`/${contact.id}`, contact)
-    //         .then(({ data }) => {
-    //             console.log(data);
-    //             const newContacts = contacts.map((item) =>
-    //                 item.id === contact.id ? data : item
-    //             );
-    //             setContacts(newContacts);
-    //             setContactForEdit({ ...contact });
-    //         })
-    //         .catch((err) => console.log(err.message));
-    // }
-
-    async function updateContact(contact) {
-        try {
-            const { data } = await api.put(`/${contact.id}`, contact);
-            console.log(data);
-            const newContacts = contacts.map((item) =>
-                item.id === contact.id ? data : item
-            );
-            setContacts(newContacts);
-            setContactForEdit({ ...contact });
-        } catch (error) {
-            console.log(error.message);
-        }
+    function updateContact(contact) {
+        api.put(`/${contact.id}`, contact)
+            .then(({ data }) => {
+                console.log(data);
+                const newContacts = contacts.map((item) =>
+                    item.id === contact.id ? data : item
+                );
+                setContacts(newContacts);
+                setContactForEdit({ ...contact });
+            })
+            .catch((err) => console.log(err.message));
     }
+
+    // async function updateContact(contact) {
+    //     try {
+    //         const { data } = await api.put(`/${contact.id}`, contact);
+    //         console.log(data);
+    //         const newContacts = contacts.map((item) =>
+    //             item.id === contact.id ? data : item
+    //         );
+    //         setContacts(newContacts);
+    //         setContactForEdit({ ...contact });
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    // }
 
     // function updateContact(contact) {
     //     const newContacts = contacts.map((item) =>
